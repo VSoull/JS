@@ -40,18 +40,6 @@ var it = (function iterator(arrayArg) {
     return iterator;
 })(array);
 
-// define("iterator", function(arrayArg) {
-//     var index = 0;
-//     return {
-//         getNext: function() {
-//             return arrayArg[index++];
-//         },
-
-//         getPrevious: function() {
-//             return arrayArg[index--];
-//         }
-//     };
-// });
 
 for (var i = 0; i < array.length; i++) {
     console.log('iterator getNext ' + it.getNext());

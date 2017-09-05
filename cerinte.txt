@@ -1,0 +1,13 @@
+da, implementeaza-mi un iterator
+folosind closures
+sa primeasca un array ca param
+si sa aiba getNext, getPrevious
+
+vreau o functie iterator
+care ia ca parametru un array
+
+si imi returnezi getNext
+imi executi functia cu un array
+dupe care imi afisezi get next
+
+aici nu te folosesti de closures cum trebe
