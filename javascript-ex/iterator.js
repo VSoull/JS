@@ -1,7 +1,12 @@
-console.log('enter program');
+'use strict';
+
+console.log('start program');
+
 var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 //iterator
+
+//invoked as an IIFE
 var it = (function iterator(arrayArg) {
     var index = 0;
 
@@ -40,6 +45,8 @@ var it = (function iterator(arrayArg) {
     return iterator;
 })(array);
 
+//invoked as function
+// var it = iterator(array);
 
 for (var i = 0; i < array.length; i++) {
     console.log('iterator getNext ' + it.getNext());
