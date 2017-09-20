@@ -1,13 +1,6 @@
 'use strict';
 
-console.log('start program');
-
-var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-//iterator
-
-//invoked as an IIFE
-var it = (function iterator(arrayArg) {
+var Iterator = function makeIterator(arrayArg) {
     var index = 0;
 
     function hasElement() {
@@ -38,27 +31,12 @@ var it = (function iterator(arrayArg) {
         }
     }
 
-    var iterator = {
+    var iteratorApi = {
         getNext: getNext,
         getPrevious: getPrevious
     };
-    return iterator;
-})(array);
 
-//invoked as function
-// var it = iterator(array);
+    return iteratorApi;
+};
 
-for (var i = 0; i < array.length; i++) {
-    console.log('iterator getNext ' + it.getNext());
-}
-
-
-for (var i = 0; i <= array.length - 1; i++) {
-    console.log('iterator Prev ' + it.getPrevious());
-}
-
-
-
-
-
-console.log('end program');
+module.exports = Iterator;
