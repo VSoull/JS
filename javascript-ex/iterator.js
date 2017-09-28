@@ -5,11 +5,7 @@ const Iterator = (arrayArg) => {
 
     const throwError = message => { throw new Error(message) };
 
-    const errorMessage = () => {
-        if (!hasElement) {
-            throwError('Index out of bounds.')
-        }
-    }
+    const errorMessage = () => hasElement ? '' : throwError;
 
     const getNext = () => arrayArg[index++] || errorMessage;
 
