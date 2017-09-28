@@ -1,37 +1,21 @@
-'use strict';
+const Iterator = (arrayArg) => {
+    let index = 0;
 
-var Iterator = function makeIterator(arrayArg) {
-    var index = 0;
+    const hasElement = () => index <= arrayArg.length ? true : false;
 
-    function hasElement() {
-        if (index <= arrayArg.length) {
-            return true;
-        } else {
-            return false;
+    const throwError = message => { throw new Error(message) };
+
+    const errorMessage = () => {
+        if (!hasElement) {
+            throwError('Index out of bounds.')
         }
     }
 
-    function errorMsg(message) {
-        throw new Error(message);
-    }
+    const getNext = () => arrayArg[index++] || errorMessage;
 
-    function getNext() {
-        if (hasElement()) {
-            return arrayArg[index++];
-        } else {
-            errorMsg('Index out of bounds.');
-        }
-    }
+    const getPrevious = () => arrayArg[--index] || errorMessage;
 
-    function getPrevious() {
-        if (hasElement()) {
-            return arrayArg[--index];
-        } else {
-            errorMsg('Index out of bounds.');
-        }
-    }
-
-    var iteratorApi = {
+    const iteratorApi = {
         getNext: getNext,
         getPrevious: getPrevious
     };
@@ -39,4 +23,4 @@ var Iterator = function makeIterator(arrayArg) {
     return iteratorApi;
 };
 
-module.exports = Iterator;
+export { Iterator as iterator };
