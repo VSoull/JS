@@ -7,27 +7,13 @@ let arrayString = ['1a', '2a', '3a', '4a', '5a', '6a', '7a', '8a', '9a', '10a'];
 
 let it = iterator(arrayNumber);
 
-arrayNumber.forEach(function(element) {
-    console.log('next ' + it.getNext());
-}, this);
-
-arrayNumber.forEach(function(element) {
-    console.log('prev ' + it.getPrevious());
-
-}, this);
+arrayNumber.forEach((element) => console.log('next ' + it.getNext()));
+arrayNumber.forEach((element) => console.log('prev ' + it.getPrevious()));
 
 console.log("---------------------------------------------------------");
 it = iterator(arrayString);
 
-arrayString.forEach(function(element) {
-    console.log('next ' + it.getNext());
-}, this);
-
-arrayString.forEach(function(element) {
-    console.log('prev ' + it.getPrevious());
-
-}, this);
-
-
+arrayString.forEach((element) => console.log('next ' + it.getNext()));
+arrayString.forEach((element) => console.log('prev ' + it.getPrevious()));
 
 console.log('end program');
