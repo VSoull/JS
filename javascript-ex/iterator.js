@@ -1,7 +1,7 @@
 const Iterator = (arrayArg) => {
     let index = 0;
 
-    const hasElement = () => index <= arrayArg.length ? true : false;
+    const hasElement = () => (index <= arrayArg.length) ? true : false;
 
     const throwError = message => { throw new Error(message) };
 
@@ -11,10 +11,7 @@ const Iterator = (arrayArg) => {
 
     const getPrevious = () => arrayArg[--index] || errorMessage;
 
-    const iteratorApi = {
-        getNext: getNext,
-        getPrevious: getPrevious
-    };
+    const iteratorApi = { getNext, getPrevious };
 
     return iteratorApi;
 };
