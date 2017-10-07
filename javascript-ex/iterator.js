@@ -1,9 +1,10 @@
+
 const Iterator = (arrayArg) => {
     let index = 0;
 
     const hasElement = () => (index <= arrayArg.length) ? true : false;
 
-    const throwError = message => { throw new Error(message) };
+    function throwError(message) { throw new Error('Index out of bound.') };
 
     const errorMessage = () => hasElement ? '' : throwError;
 
