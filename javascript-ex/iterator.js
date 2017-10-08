@@ -4,7 +4,7 @@ const Iterator = (arrayArg) => {
 
     const hasElement = () => (index <= arrayArg.length) ? true : false;
 
-    function throwError(message) { throw new Error('Index out of bound.') };
+    function throwError({ message = 'Index out of bound.' } = {}) { throw new Error(message) };
 
     const errorMessage = () => hasElement ? '' : throwError;
 
